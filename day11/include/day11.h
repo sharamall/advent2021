@@ -8,13 +8,6 @@
 #define SIDE_L 10
 #define ITERATIONS 100
 
-typedef struct {
-    void **items;
-    int size;
-    int capacity;
-} list;
-
-void push_back(list **pp_l, void *item);
 int *alloc_input(const char *src);
 void dealloc_input(int *input);
 

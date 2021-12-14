@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include "day9.h"
 #include <stdlib.h>
+#include "shared.h"
 
 void calc_basin_size(location *in, int cur, int basin_offset) {
     if (in[cur].val != 9 && !in[cur].marked) {

@@ -8,5 +8,10 @@ set(PART2_SRC_FILES
         )
 add_executable(day9part1 ${PART1_SRC_FILES})
 target_include_directories(day9part1 PUBLIC include)
+add_dependencies(day9part1 shared)
+target_link_libraries(day9part1 PUBLIC shared)
+
 add_executable(day9part2 ${PART2_SRC_FILES})
 target_include_directories(day9part2 PUBLIC include)
+add_dependencies(day9part2 shared)
+target_link_libraries(day9part2 PUBLIC shared)

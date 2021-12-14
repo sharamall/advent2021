@@ -4,7 +4,7 @@
 #include "day10.h"
 #include <stdio.h>
 #include <stdlib.h>
-
+#include "shared.h"
 int main(void) {
     char **lines = alloc_input("../../day10/resources/input.txt");
 

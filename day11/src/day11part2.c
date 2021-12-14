@@ -4,6 +4,7 @@
 #include "day11.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include "shared.h"
 
 int main(void) {
     int *arr = alloc_input("../../day11/resources/input.txt");
@@ -64,7 +65,7 @@ int main(void) {
                 free(l);
             }
             if (flashes_in_step == 100) {
-                printf("sync at %d, flashes %d\n", i + 1, flashes_in_step);
+                printf("sync at %d\n", i + 1);
                 goto test;
             }
             i++;

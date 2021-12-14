@@ -1,6 +1,5 @@
 #include <stdlib.h>
 #include "day3.h"
-#include <string.h>
 
 int *alloc_input(void) {
     int *input = malloc(sizeof(int) * 1000);

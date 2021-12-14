@@ -4,11 +4,11 @@
 #include "day11.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include "shared.h"
 
 int main(void) {
     int *arr = alloc_input("../../day11/resources/input.txt");
     if (arr) {
-        printf("read array:\n");
         int flashes = 0;
         int before_flashes;
         for (int i = 0; i < ITERATIONS; i++) {
