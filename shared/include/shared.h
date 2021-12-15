@@ -12,5 +12,5 @@ typedef struct {
 } list;
 
 void push_back(list **pp_l, void *item);
-
+void dealloc_list(list **l, int free_items);
 #endif //ADVENT2021_SHARED_H
