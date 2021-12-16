@@ -21,6 +21,7 @@ typedef struct {
     path *paths;
     list *nodes;
     node *start, *end;
+    int small_cave_visited;
 } input;
 
 input *alloc_input(const char *file);
