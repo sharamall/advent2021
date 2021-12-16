@@ -5,6 +5,7 @@
 #include "day15.h"
 #include <stdio.h>
 #include "shared.h"
+#include <limits.h>
 
 int process_node(node *cur, node *next) {
     if (next) {
@@ -37,10 +38,42 @@ void process_next_iteration(input *in, list **l) {
             push_back(&to_visit_next, cur->left);
         }
     }
-    if (!in->end->prev) {
+    if (to_visit_next && to_visit_next->size > 0) {
         process_next_iteration(in, &to_visit_next);
+        dealloc_list(&to_visit_next, 0);
     }
-    dealloc_list(&to_visit_next, 0);
+}
+
+void print_paths(input *in) {
+    for (int x = 0; x < in->side_length; x++) {
+        for (int y = 0; y < in->side_length; y++) {
+            node *n = in->arr[x + y * in->side_length];
+            if (n->distance < INT_MAX) {
+                printf("path for node %d, distance %d: ", n->risk, n->distance);
+                node *prev = n;
+                while (prev != in->start) {
+                    printf("%d ", prev->risk);
+                    prev = prev->prev;
+                }
+                printf("%d \n", prev->risk);
+            }
+        }
+    }
+    printf("\n");
+}
+
+void print_nodes(input *in) {
+    for (int x = 0; x < in->side_length; x++) {
+        for (int y = 0; y < in->side_length; y++) {
+            node *n = in->arr[x + y * in->side_length];
+            if (!n) {
+                printf("\n\nnull in print_node x, y [%d,%d]\n", x, y);
+            }
+            printf("[%d,%d]", n->risk, n->distance);
+        }
+        printf("\n");
+    }
+    printf("\n");
 }
 
 int main(void) {
@@ -49,6 +82,8 @@ int main(void) {
     list *l = 0;
     push_back(&l, in->start);
     process_next_iteration(in, &l);
+//    print_nodes(in);
+//    print_paths(in);
     dealloc_list(&l, 0);
     printf("end dist %d\n", in->end->distance);
 

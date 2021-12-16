@@ -4,8 +4,6 @@
 
 #ifndef ADVENT2021_DAY15_H
 #define ADVENT2021_DAY15_H
-#define SIDE_LENGTH 100
-
 struct node;
 typedef struct node node;
 struct node {
@@ -17,6 +15,7 @@ struct node {
 
 typedef struct {
     node *start, *end, **arr;
+    int side_length;
 } input;
 
 input *alloc_input(const char *file);
