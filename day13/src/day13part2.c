@@ -7,10 +7,9 @@
 #include <stdio.h>
 #include <string.h>
 
-
 int main(void) {
     input *in = alloc_input("../../day13/resources/input.txt");
-    printf("total %d\n", calc_dots(in, 1));
+    printf("total %d\n", calc_dots(in, FOLD_ROWS));
 
     return 0;
 }

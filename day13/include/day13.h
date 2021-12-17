@@ -6,7 +6,7 @@
 #define ADVENT2021_DAY13_H
 
 #define DATA_ROWS 1017
-#define FOLD_ROWS 1
+#define FOLD_ROWS 12
 
 typedef struct {
     int x, value;
@@ -25,6 +25,7 @@ typedef struct {
 
 input *alloc_input(const char *src);
 void dealloc_input(input *in);
+int calc_dots(input *in, int num_folds);
 
 #endif //ADVENT2021_DAY13_H
 
