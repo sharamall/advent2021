@@ -7,7 +7,6 @@
 
 #define FIRST_LINE 20
 #define IN_LENGTH 100
-#define ITERATIONS 10
 
 #include <stdlib.h>
 
@@ -21,6 +20,8 @@ typedef struct {
     mapping **mappings;
 } input;
 
+int16_t chars_to_key(char a, char b);
+int *map_rules(input *in);
 input *alloc_input(const char *file);
 void dealloc_input(input *in);
 

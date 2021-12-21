@@ -9,6 +9,22 @@
 #include <string.h>
 #include "shared.h"
 
+int16_t chars_to_key(char a, char b) {
+    int16_t ret;
+    ret = a << 8;
+    ret |= b;
+    return ret;
+}
+
+int *map_rules(input *in) {
+    int *map = malloc(sizeof(int) * 65535);
+    memset(map, 0, sizeof(int) * 65535);
+    for (int i = 0; i < IN_LENGTH; i++) {
+        map[in->mappings[i]->key] = in->mappings[i]->val;
+    }
+    return map;
+}
+
 input *alloc_input(const char *src) {
     FILE *file = fopen(src, "r");
     if (file) {

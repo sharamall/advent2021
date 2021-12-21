@@ -6,28 +6,11 @@
 #include <stdio.h>
 #include <string.h>
 #include "shared.h"
-
-int16_t chars_to_key(char a, char b) {
-    int16_t ret;
-    ret = a << 8;
-    ret |= b;
-    return ret;
-}
-
-int *map_rules(input *in) {
-    int *map = malloc(sizeof(int) * 65535);
-    memset(map, 0, sizeof(int) * 65535);
-    for (int i = 0; i < IN_LENGTH; i++) {
-        map[in->mappings[i]->key] = in->mappings[i]->val;
-    }
-    return map;
-}
+#define ITERATIONS 40
 
 void print(char *cur, int length) {
-    int i = 0;
-//    while (cur[i]) {
-    for (; i < length;) {
-        printf("%c", cur[i++]);
+    for (int i = 0; i < length; i++) {
+        printf("%c", cur[i]);
     }
     printf("\n");
 }
