@@ -4,7 +4,7 @@
 
 #ifndef ADVENT2021_DAY16_H
 #define ADVENT2021_DAY16_H
-#define LENGTH 6
+#define LENGTH 1370
 
 #include "shared.h"
 
