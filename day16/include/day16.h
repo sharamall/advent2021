@@ -8,16 +8,6 @@
 
 #include "shared.h"
 
-typedef struct {
-    int len;
-    int version;
-    int *bits;
-} packet;
-
-typedef struct {
-    list *packets;
-} input;
-
 int *alloc_input(const char *file);
 void dealloc_input(int *bits);
 #endif //ADVENT2021_DAY16_H
