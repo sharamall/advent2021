@@ -30,13 +30,15 @@ void push_back(list **pp_l, void *item) {
 void dealloc_list(list **p_list, int free_items) {
     if (p_list) {
         list *l = *p_list;
-        if (free_items) {
-            for (int i = 0; i < l->size; i++) {
-                free(l->items[i]);
-            };
+        if (l) {
+            if (free_items) {
+                for (int i = 0; i < l->size; i++) {
+                    free(l->items[i]);
+                };
+            }
+            free(l->items);
+            free(l);
+            *p_list = 0;
         }
-        free(l->items);
-        free(l);
-        *p_list = 0;
     }
 }
